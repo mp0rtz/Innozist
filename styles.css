@@ -292,4 +292,5 @@ input:focus, textarea:focus, .btn:focus{ outline: 3px solid color-mix(in srgb, v
   object-fit: cover;
   display: block;
   border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  image-rendering: auto;
 }
