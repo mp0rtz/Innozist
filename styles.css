@@ -285,12 +285,11 @@ input:focus, textarea:focus, .btn:focus{ outline: 3px solid color-mix(in srgb, v
 .person p{ margin:0; }
 
 .avatar-photo{
-  width: 56px;
-  height: 56px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
-  flex: 0 0 56px;
+  flex: 0 0 76px;
   object-fit: cover;
   display: block;
   border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
-  image-rendering: auto;
 }
