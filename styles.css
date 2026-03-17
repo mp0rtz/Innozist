@@ -287,9 +287,10 @@ input:focus, textarea:focus, .btn:focus{ outline: 3px solid color-mix(in srgb, v
 .avatar-photo{
   width: 76px;
   height: 76px;
-  border-radius: 50%;
   flex: 0 0 76px;
+  border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
   display: block;
   border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
 }
