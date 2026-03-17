@@ -123,6 +123,112 @@ p{ margin: 0 0 1rem; }
 }
 @media (max-width: 950px){ .cards{ grid-template-columns: 1fr; } }
 
+/* Reviews carousel */
+.reviews-carousel{
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.reviews-track-wrap{
+  overflow: hidden;
+}
+
+.reviews-track{
+  display: flex;
+  transition: transform .4s ease;
+}
+
+.review-slide{
+  min-width: 100%;
+  background: var(--card);
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: 1.2rem;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.review-stars{
+  color: #7cc3ff;
+  letter-spacing: .15rem;
+  font-size: 1rem;
+  margin-bottom: .9rem;
+}
+
+.review-text{
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+.review-author{
+  display:flex;
+  flex-direction:column;
+  gap: .15rem;
+}
+
+.review-author strong{
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.review-author span{
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.carousel-btn{
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  background: var(--card);
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, background .2s ease;
+}
+
+.carousel-btn:hover{
+  background: color-mix(in srgb, var(--card) 70%, white 5%);
+}
+
+.carousel-btn:active{
+  transform: translateY(1px);
+}
+
+.carousel-dots{
+  display:flex;
+  justify-content:center;
+  gap:.5rem;
+  margin-top: 1rem;
+}
+
+.carousel-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: color-mix(in srgb, var(--muted) 55%, transparent);
+  cursor: pointer;
+}
+
+.carousel-dot.active{
+  background: var(--accent);
+}
+
+@media (max-width: 700px){
+  .reviews-carousel{
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-btn{
+    display:none;
+  }
+}
+
 /* About / Team */
 .grid.team{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:1rem; align-items:stretch; }
 .person{ display:flex; gap: .9rem; padding:1rem; background: var(--card); border:1px solid color-mix(in srgb, var(--border) 70%, transparent); border-radius: 1rem; align-items:center; }
