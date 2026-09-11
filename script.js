@@ -74,6 +74,7 @@
 
   if (carousel && track && slides.length) {
     let currentIndex = 0;
+    let autoplayId = null;
 
     const updateCarousel = () => {
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -83,26 +84,40 @@
       });
     };
 
+    const stopAutoplay = () => {
+      if (autoplayId !== null) {
+        clearInterval(autoplayId);
+        autoplayId = null;
+      }
+    };
+
+    const startAutoplay = () => {
+      autoplayId = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+      }, 5000);
+    };
+
     prevBtn && prevBtn.addEventListener('click', () => {
+      stopAutoplay();
       currentIndex = (currentIndex - 1 + slides.length) % slides.length;
       updateCarousel();
     });
 
     nextBtn && nextBtn.addEventListener('click', () => {
+      stopAutoplay();
       currentIndex = (currentIndex + 1) % slides.length;
       updateCarousel();
     });
 
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
+        stopAutoplay();
         currentIndex = i;
         updateCarousel();
       });
     });
 
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateCarousel();
-    }, 5000);
+     startAutoplay();
   }
 })();
